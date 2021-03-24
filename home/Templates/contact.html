@@ -3,6 +3,7 @@
 {% block content %}
 	  
 			<!-- start banner Area -->
+
 			<section class="relative about-banner">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">				
@@ -55,7 +56,9 @@
 							</div>														
 						</div>
 						<div class="col-lg-8">
+							<center><font color="red"></font>{{message}}</center>
 							<form class="form-area contact-form text-right" method="POST">
+
 								{% csrf_token %}
 								<div class="row">	
 									<div class="col-lg-6 form-group">

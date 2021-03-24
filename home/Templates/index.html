@@ -153,119 +153,38 @@
                     
                     <div class="filters">
                         <ul>
+							{% for cat in projects %}
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".vector">Vector</li>
-                            <li data-filter=".raster">Raster</li>
-                            <li data-filter=".ui">UI/UX</li>
-                            <li data-filter=".printing">Printing</li>
+							<li data-filter="vector">vector</li>
+							<li data-filter="raster">raster</li>
+							<li data-filter="ui">ui</li>
+							<li data-filter="printing">printing</li>
+
+							{% endfor %}
                         </ul>
                     </div>
                     
                     <div class="filters-content">
                         <div class="row grid">
+							{% for categories in projects %}
                             <div class="single-portfolio col-sm-4 all vector">
                             	<div class="relative">
 	                            	<div class="thumb">
 	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p1.jpg' %}" alt="">
+	                            		 <img class="image img-fluid" src="{{caterogies.images}}" alt="">
 	                            	</div>
 									<a href="{% static 'img/p1.jpg' %}" class="img-pop-up">
 									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
+									    <div class="text align-self-center d-flex"><img src="{{categories.images}}" alt=""></div>
 									  </div>
 								</a>                              		
                             	</div>
 								<div class="p-inner">
-								    <h4>2D Vinyl Design</h4>
-									<div class="cat">vector</div>
+								    <h4>{{categories.name}}</h4>
+									<div class="cat">{{categories.discription}}</div>
 								</div>					                               
                             </div>
-                            <div class="single-portfolio col-sm-4 all raster">
-                            	<div class="relative">
-	                            	<div class="thumb">
-	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p2.jpg' %}" alt="">
-	                            	</div>
-									<a href="{% static 'img/p2.jpg' %}" class="img-pop-up">
-									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-									  </div>
-								</a>                              		
-                            	</div>
-								<div class="p-inner">
-								    <h4>2D Vinyl Design</h4>
-									<div class="cat">vector</div>
-								</div>					                               
-                            </div>                            
-                            <div class="single-portfolio col-sm-4 all ui">
-                            	<div class="relative">
-	                            	<div class="thumb">
-	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p3.jpg' %}" alt="">
-	                            	</div>
-									<a href="{% static 'img/p3.jpg' %}" class="img-pop-up">
-									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-									  </div>
-									</a> 
-	                            		
-	                           	</div>
-                                <div class="p-inner">
-                                    <h4>Creative Poster Design</h4>
-                                    <div class="cat">Agency</div>
-                                </div>
-                            </div>
-                            <div class="single-portfolio col-sm-4 all printing">
-                            	<div class="relative">
-	                            	<div class="thumb">
-	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p4.jpg' %}" alt="">
-	                            	</div>
-									<a href="{% static 'img/p4.jpg' %}" class="img-pop-up">
-									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-									  </div>
-									</a>                            		
-                            	</div> 
-                                <div class="p-inner">
-                                    <h4>Embosed Logo Design</h4>
-                                    <div class="cat">Portal</div>
-                                </div>
-                            </div>
-                            <div class="single-portfolio col-sm-4 all vector">
-                            	<div class="relative">
-                            	<div class="thumb">
-	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p5.jpg' %}" alt="">
-	                            	</div>
-									<a href="{% static 'img/p5.jpg' %}" class="img-pop-up">
-									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-									  </div>
-									</a>                             		
-                            	</div>
-                                <div class="p-inner">
-                                    <h4>3D Helmet Design</h4>
-                                    <div class="cat">vector</div>
-                                </div>
-                            </div>
-                            <div class="single-portfolio col-sm-4 all raster">
-                            	<div class="relative">
-	                            	<div class="thumb">
-	                            		<div class="overlay overlay-bg"></div>
-	                            		 <img class="image img-fluid" src="{% static 'img/p6.jpg' %}" alt="">
-	                            	</div>
-									<a href="{% static 'img/p6.jpg' %}" class="img-pop-up">
-									  <div class="middle">
-									    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-									  </div>
-									</a>                             		
-                            	</div>
-                                <div class="p-inner">
-                                    <h4>2D Vinyl Design</h4>
-                                    <div class="cat">raster</div>
-                                </div>
-                            </div>
+							{% endfor %}
                         </div>
                     </div>
                     
@@ -286,30 +205,20 @@
 		            </div>
 		            <div class="row">
 		                <div class="active-testimonial">
+							{% for feedback in feedbacks %}
 		                    <div class="single-testimonial item d-flex flex-row">
 		                        <div class="thumb">
-		                            <img class="img-fluid" src="{% static 'img/elements/user1.png' %}" alt="">
+		                            <img class="img-fluid" src="{{feedback.images}}" alt="" style="border-radius:30%; height: 100px; width: 100px;">
 		                        </div>
 		                        <div class="desc">
 		                            <p>
-		                                Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills, the bigger the payoff you.		     
+										{{feedback.comment}}
 		                            </p>
-		                            <h4>Harriet Maxwell</h4>
-		                            <p>CEO at Google</p>
+		                            <h4>{{feedback.name}}</h4>
+		                            <p>{{feedback.profession}}</p>
 		                        </div>
 		                    </div>
-		                    <div class="single-testimonial item d-flex flex-row">
-		                        <div class="thumb">
-		                            <img class="img-fluid" src="{% static 'img/elements/user2.png' %}" alt="">
-		                        </div>
-		                        <div class="desc">
-		                            <p>
-		                                A purpose is the eternal condition for success. Every former smoker can tell you just how hard it is to stop smoking cigarettes. However.
-		                            </p>
-		                            <h4>Carolyn Craig</h4>
-		                            <p>CEO at Facebook</p>
-		                        </div>
-		                    </div>
+		                    {% endfor %}
 		                </div>
 		            </div>
 		        </div>
@@ -498,21 +407,11 @@
 		        <div class="container">
 		            <div class="brand-wrap">
 		                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">
+							{% for brand in brands %}
 		                    <div class="col single-brand">
-		                        <a href="#"><img class="mx-auto" src="{% static 'img/l1.png' %}" alt=""></a>
+		                        <a href="#"><img class="mx-auto" src="{{brand.images}}" alt=""  style = "height: 100px;"></a>
 		                    </div>
-		                    <div class="col single-brand">
-		                        <a href="#"><img class="mx-auto" src="{% static 'img/l2.png' %}" alt=""></a>
-		                    </div>
-		                    <div class="col single-brand">
-		                        <a href="#"><img class="mx-auto" src="{% static 'img/l3.png' %}" alt=""></a>
-		                    </div>
-		                    <div class="col single-brand">
-		                        <a href="#"><img class="mx-auto" src="{% static 'img/l4.png' %}" alt=""></a>
-		                    </div>
-		                    <div class="col single-brand">
-		                        <a href="#"><img class="mx-auto" src="{% static 'img/l5.png' %}" alt=""></a>
-		                    </div>
+		                    {% endfor %}
 		                </div>
 		            </div>
 		        </div>
