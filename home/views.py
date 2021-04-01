@@ -11,10 +11,15 @@ def home(request):
     return render(request, 'index.html', views)
 
 def about(request):
-    return render(request, 'about.html')
+    views = {}
+    views['feedbacks'] = Review.objects.all()
+    views['brands'] = Brand.objects.all()
+    return render(request, 'about.html',views)
 
 def service(request):
-    return render(request, 'services.html')
+    views = {}
+    views['feedbacks'] = Review.objects.all()
+    return render(request, 'services.html', views)
 
 def portfolio(request):
     return render(request, 'portfolio.html')
@@ -41,7 +46,7 @@ def contact(request):
             message = message
         )
         data.save()
-    views = {
-        "message": "The Form is Submitted"
-    }
-    return render(request, 'contact.html')
+    views = {}
+    views["message"] = "The Form is Submitted."
+    views['address'] = Address.objects.all()
+    return render(request, 'contact.html',views)

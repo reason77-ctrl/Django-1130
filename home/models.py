@@ -43,3 +43,13 @@ class Brand(models.Model):
     images = models.TextField()
     def __str__(self):
         return self.title
+
+class Address(models.Model):
+    address = models.CharField(max_length= 300)
+    subaddress = models.CharField(max_length= 300, blank= True)
+    phone = models.CharField(max_length= 100)
+    time = models.CharField(max_length= 300, blank= True)
+    email = models.EmailField(max_length= 100, blank= True)
+    discript = models.TextField(blank= True)
+    def __str__(self):
+        return self.address
